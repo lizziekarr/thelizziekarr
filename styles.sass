@@ -1,0 +1,311 @@
+
+//variables
+$pink: #FEDAF0
+$gray: #202020
+$title-font: sans-serif
+$body-font: sans-serif
+
+//keyframes
+@keyframes fadeInDown
+  from
+    opacity: 0
+    transform: translate3d(-30%, -15%, 0)
+  to
+    opacity: 1
+    transform: none
+@keyframes grow
+  from
+    width: 0
+  to
+    width: 68vw
+
+@keyframes wiggle
+  0%
+    transform: none
+  50%
+    transform: rotate(8deg)
+  80%
+    transform: rotate(-4deg)
+  100%
+    transform: none
+//styles
+*
+  margin: 0
+  padding: 0
+  border: 0
+html
+  background-color: $gray
+.container-fluid
+  //width: 100%
+  margin: 0
+  padding: 0
+  background-color: $gray
+  height: 100%
+  .exit
+    background-color: $pink
+    color: $gray
+    text-align: center
+    padding: 15px
+    font-size: 2vw
+    font-family: 'Syncopate', sans-serif
+    transition: all 1s ease-in-out
+    transform: rotate(30deg)
+    &:hover
+      transform: rotate(35deg)
+      cursor: pointer
+      background-color: white
+  .home
+    display: flex
+    flex-direction: column
+    align-items: center
+    figure
+      width: 25vw
+      padding: 20px
+      .page-link
+        h2
+          text-align: center
+          padding: 20px
+          font-size: 2vw
+          font-family: 'Syncopate', sans-serif
+          color: $pink
+          border-top: solid $pink 1px
+          border-bottom: solid $pink 1px
+          transition: all .6s ease-in-out
+          &:hover
+            cursor: pointer
+            color: white
+            border-width: 2px
+            animation: wiggle .8s
+  .projects
+    display: none
+    .exit
+      width: 38%
+      margin-top: 4vh
+      margin-left: 70vw
+    img
+      width: 15%
+      height: auto
+      position: absolute
+      &.flower-one
+        margin-left: 65vw
+        margin-top: 20vh
+      &.flower-two
+        margin-top: -50vh
+        margin-left: 5vw
+    .pink-line
+      position: relative
+      z-index: 1
+      width: 1vw
+      height: 2px
+      background-color: $pink
+      transition: all 5s ease-in-out
+      animation: grow 4s ease-in-out 1 normal 0s forwards
+      &.loaded
+        transform: rotate(25deg)
+        transition: all 5s ease-in-out
+      &.top
+        &.loaded
+          width: 68vw
+      &.bottom
+        &.loaded
+          width: 30vh
+          transform: rotate(60deg)
+    .project
+      opacity: 0
+      width: 40vw
+      height: 15vh
+      position: relative
+      z-index: 1
+      &.p-one
+        margin-left: 10vw
+        animation: fadeInDown 1.5s ease-in-out 1 normal 0s forwards
+        a
+          font-family: futura
+      &.p-two
+        margin-left: 22vw
+        animation: fadeInDown 1.5s ease-in-out 1 normal .3s forwards
+        a
+          font-family: 'Trebuchet MS'
+      &.p-three
+        animation: fadeInDown 1.5s ease-in-out 1 normal .6s forwards
+        margin-left: 34vw
+        a
+          font-family: 'Monoton', cursive
+      &.p-four
+        animation: fadeInDown 1.5s ease-in-out 1 normal .9s forwards
+        margin-left: 46vw
+        a
+          font-family: 'Ruslan Display', cursive
+      &.p-five
+        animation: fadeInDown 1.5s ease-in-out 1 normal 1.2s forwards
+        margin-left: 58vw
+        a
+          font-family: 'Allerta Stencil', sans-serif
+      a
+        color: $pink
+        font-size: 3vw
+        letter-spacing: 2px
+        transition: all 1s ease-in-out
+        text-decoration: none
+        &:hover
+          cursor: pointer
+          text-decoration: none
+          color: white
+          letter-spacing: 3px
+        &:active
+          text-decoration: none
+  .stories
+    display: none
+    justify-content: space-between
+    flex-flow: row wrap
+    .box
+      padding: 40px 20px 20px 40px
+      &.one
+        width: 66.6vw
+        min-height: 50vh
+        border-right: solid $pink 1px
+
+        .letters
+          display: inline-block
+          width: 10vw
+          .title
+            opacity: 0
+            transform: translate(-20px, -20px)
+            padding: 15px
+            transition: all 1s ease-in-out
+            &.is-showing
+              opacity: 1
+              transform: none
+        .content
+          display: inline-block
+          width: 75%
+          font-size: 2.5vw
+          font-family: $body-font
+          line-height: 2.2
+
+      &.two
+        width: 33.3vw
+        min-height: 75vh
+        border-bottom: solid $pink 1px
+        .exit
+          width: 140%
+        .title
+          opacity: 0
+          transform: translateX(100px)
+          margin-top: 5vh
+          letter-spacing: 5px
+          font-family: 'Syncopate', sans-serif
+          font-size: 3vw
+          &.is-showing
+            transform: none
+            opacity: 1
+        .content
+          text-align: justify
+          width: 95%
+          font-size: 1.6vw
+          line-height: 2.6
+      &.three
+        border-top: solid $pink 1px
+        width: 30vw
+        min-height: 80vh
+        margin-top: -25vh
+        .title
+          font-family: 'Monoton', cursive
+          opacity: 0
+          &.is-showing
+            opacity: 1
+        .content
+          font-size: 2vw
+          line-height: 2
+          &.team
+            font-family: 'Monoton', cursive
+            letter-spacing: 2px
+      &.four
+        border-left: solid $pink 1px
+        width: 60vw
+        height: 50vh
+        .title
+          text-align: right
+          font-family: 'Ruslan Display', cursive
+          opacity: 0
+          transform: translateY(30px)
+          &.is-showing
+            opacity: 1
+            transform: none
+        .content
+          font-size: 4vw
+          font-family: $body-font
+          line-height: 1.5
+          text-align: right
+      &.five
+        width: 60vw
+        border-top: solid $pink 1px
+        //border-right: solid $pink 1px
+        .title
+          text-align: center
+          font-family: 'Allerta Stencil', sans-serif
+        .content
+          font-size: 2vw
+          font-family: $body-font
+          text-align: justify
+          line-height: 2
+        @media screen and (max-width: 1024px)
+          //border-top: solid $pink 1px
+          border-right: solid $pink 1px
+      &.six
+        margin-top: -10vh
+        width: 25vw
+        @media screen and (max-width: 1024px)
+          border-left: solid $pink 1px
+          border-top: solid $pink 1px
+        .title
+          border-bottom: solid $pink 1px
+          border-top: solid $pink 1px
+          display: inline-block
+          margin-left: -10vw
+          margin-top: 35vh
+          font-size: 5vw
+          width: 5vw
+          transform: rotate(270deg)
+          font-family: 'Reenie Beanie', cursive
+        .content
+          display: inline-block
+          text-align: justify
+          float: right
+          font-size: 18px
+          line-height: 2
+          width: 18vw
+
+      .title
+        color: $pink
+        font-size: 4vw
+        padding: 30px 0
+        transition: all 1s ease-in-out
+
+      .content
+        color: $pink
+        font-family: $body-font
+        margin: 20px 0
+
+  .contact
+    display: none
+    .email
+      margin-top: 20vh
+      color: $pink
+      font-size: 6vw
+      font-family: 'Syncopate', sans-serif
+      text-align: center
+    .social-section
+      display: flex
+      flex-flow: row wrap
+      justify-content: space-around
+      a
+        color: $pink
+        font-size: 2vw
+        font-family: 'Syncopate', sans-serif
+        text-align: center
+        transition: all 1s ease-in
+        &:hover
+          text-decoration: none
+          color: white
+          font-size: 2.6vw

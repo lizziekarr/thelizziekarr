@@ -1,0 +1,13 @@
+{
+  "name": "angular-seed",
+  "version": "0.0.0",
+  "homepage": "https://github.com/angular/angular-seed",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "bootstrap": "*",
+    "jquery": "~2.0.3",
+    "html5-boilerplate": "~5.2.0",
+    "components-font-awesome": "*"
+  }
+}
